@@ -16,8 +16,23 @@ export default function TextForm(props) {
     }
 
     const btnLowercase = () => {
-        // console.log("Uppercase button is clicked!");
+        // console.log("Lowercase button is clicked!");
         setText(text.toLocaleLowerCase());
+    }
+
+    const btnSentencecase = () => {
+        // console.log("Sentencecase button is clicked!");
+        var newText = text.toLowerCase().split(' ');
+        for(var i = 0; i < newText.length; i++){
+            newText[i] = newText[i].charAt(0).toUpperCase() + newText[i].slice(1); 
+        }
+        var sentenceCaseText = newText.join(' ');
+        setText(sentenceCaseText);
+    }
+
+    const btnCleartext = () => {
+        // console.log("Clear text button is clicked!");
+        setText('');
     }
 
   return (
@@ -29,6 +44,8 @@ export default function TextForm(props) {
             </div>
             <button className="btn btn-primary mx-2" onClick={btnUppercase}>Convert To Uppercase</button>
             <button className="btn btn-primary mx-2" onClick={btnLowercase}>Convert To Lowercase</button>
+            <button className="btn btn-primary mx-2" onClick={btnSentencecase}>Convert To Sentence Case</button>
+            <button className="btn btn-primary mx-2" onClick={btnCleartext}>Clear Text</button>
         </div>
         <div className="container my-3">
             <h2>Your Text Summary</h2>
