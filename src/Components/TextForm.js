@@ -13,11 +13,13 @@ export default function TextForm(props) {
     const btnUppercase = () => {
         // console.log("Uppercase button is clicked!");
         setText(text.toUpperCase());
+        props.showAlert('Converted to Uppercase','success');
     }
 
     const btnLowercase = () => {
         // console.log("Lowercase button is clicked!");
         setText(text.toLocaleLowerCase());
+        props.showAlert('Converted to Lowercase','success');
     }
 
     const btnSentencecase = () => {
@@ -28,11 +30,13 @@ export default function TextForm(props) {
         }
         var sentenceCaseText = newText.join(' ');
         setText(sentenceCaseText);
+        props.showAlert('Converted to Sentence Case','success');
     }
 
     const btnCleartext = () => {
         // console.log("Clear text button is clicked!");
         setText('');
+        props.showAlert('Text has been cleared','success');
     }
 
   return (
