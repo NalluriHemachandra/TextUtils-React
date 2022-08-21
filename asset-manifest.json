@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/NalluriHemachandra/TextUtils-React/static/css/main.073c9b0a.css",
+    "main.js": "/NalluriHemachandra/TextUtils-React/static/js/main.894ff2dc.js",
+    "static/js/787.28cb0dcd.chunk.js": "/NalluriHemachandra/TextUtils-React/static/js/787.28cb0dcd.chunk.js",
+    "index.html": "/NalluriHemachandra/TextUtils-React/index.html",
+    "main.073c9b0a.css.map": "/NalluriHemachandra/TextUtils-React/static/css/main.073c9b0a.css.map",
+    "main.894ff2dc.js.map": "/NalluriHemachandra/TextUtils-React/static/js/main.894ff2dc.js.map",
+    "787.28cb0dcd.chunk.js.map": "/NalluriHemachandra/TextUtils-React/static/js/787.28cb0dcd.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.894ff2dc.js"
+  ]
+}
