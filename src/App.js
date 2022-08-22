@@ -43,8 +43,8 @@ function App() {
         <div className='container my-3'>
             <Routes>
               {/* using exact is important because react matches the endpoint exactly. otherwise react matches partially */}
-              <Route exact path='/' element = {<TextForm showAlert = {showAlert}  mode = {mode} heading = "Enter the Text to Analyze below"/>}></Route>
-              <Route exact path='/about' element = {<About  mode = {mode}/>}></Route>
+              <Route exact path='/textutils/home' element = {<TextForm showAlert = {showAlert}  mode = {mode} heading = "Enter the Text to Analyze below"/>}></Route>
+              <Route exact path='/textutils/about' element = {<About  mode = {mode}/>}></Route>
             </Routes>
         </div>
       </Router>
