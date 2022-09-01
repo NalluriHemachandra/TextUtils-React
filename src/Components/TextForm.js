@@ -33,6 +33,19 @@ export default function TextForm(props) {
         props.showAlert('Converted to Sentence Case','success');
     }
 
+    const btnCopy = () => {
+        var text = document.getElementById('myBox');
+        text.select();
+        navigator.clipboard.writeText(text.value);
+        props.showAlert('Text copied','success');
+    }
+
+    const btnRemoveExtraSpaces = () => {
+        let newText = text.split(/[ ]+/);
+        setText(newText.join(" "));
+        props.showAlert('successfully removed extra spaces','success');
+    }
+
     const btnCleartext = () => {
         // console.log("Clear text button is clicked!");
         setText('');
@@ -51,6 +64,8 @@ export default function TextForm(props) {
             <button disabled= {text.length === 0} className="btn btn-primary mx-2" onClick={btnUppercase}>Convert To Uppercase</button>
             <button disabled= {text.length === 0} className="btn btn-primary mx-2" onClick={btnLowercase}>Convert To Lowercase</button>
             <button disabled= {text.length === 0} className="btn btn-primary mx-2" onClick={btnSentencecase}>Convert To Sentence Case</button>
+            <button disabled= {text.length === 0} className="btn btn-primary mx-2" onClick={btnRemoveExtraSpaces}>Remove Extra Spaces</button>
+            <button disabled= {text.length === 0} className="btn btn-primary mx-2" onClick={btnCopy}>Copy Text</button>
             <button disabled= {text.length === 0} className="btn btn-primary mx-2" onClick={btnCleartext}>Clear Text</button>
         </div>
         <div className="container my-3" style={{color: props.mode === 'dark'? 'white' : 'black'}}>
