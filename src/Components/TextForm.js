@@ -1,4 +1,8 @@
 import React, {useState} from 'react'
+import { useDispatch } from 'react-redux';
+import CharacterRemaining from './CharacterRemaining';
+import { bindActionCreators } from 'redux';
+import { actionCreators } from '../state';
 
 
 export default function TextForm(props) {
@@ -8,6 +12,7 @@ export default function TextForm(props) {
     const handleOnChange = (event) => {
         // console.log("Handle on Change");
         setText(event.target.value);
+        dispatch(actionCreators.addCharacters(event.target.value.length));
     }
 
     const btnUppercase = () => {
@@ -52,6 +57,7 @@ export default function TextForm(props) {
         props.showAlert('Text has been cleared','success');
     }
 
+    const dispatch = useDispatch();
   return (
     <>
         <div className='container'  style={{color: props.mode === 'dark'? 'white' : 'black'}}>
@@ -59,8 +65,9 @@ export default function TextForm(props) {
             <div className="mb-3">
                 <textarea className="form-control"  value = {text} 
                  style={{color: props.mode === 'dark'? 'white' : 'black', backgroundColor: props.mode === 'dark' ? '#13466e' : 'white'}}
-                onChange = {handleOnChange} id="myBox" rows="8"></textarea>
+                onChange = {handleOnChange} id="myBox" rows="8" maxLength={20}></textarea>
             </div>
+            <CharacterRemaining/>
             <button disabled= {text.length === 0} className="btn btn-primary mx-2" onClick={btnUppercase}>Convert To Uppercase</button>
             <button disabled= {text.length === 0} className="btn btn-primary mx-2" onClick={btnLowercase}>Convert To Lowercase</button>
             <button disabled= {text.length === 0} className="btn btn-primary mx-2" onClick={btnSentencecase}>Convert To Sentence Case</button>
