@@ -1,7 +1,6 @@
 import React, {useState} from 'react'
 import { useDispatch } from 'react-redux';
 import CharacterRemaining from './CharacterRemaining';
-import { bindActionCreators } from 'redux';
 import { actionCreators } from '../state';
 
 
