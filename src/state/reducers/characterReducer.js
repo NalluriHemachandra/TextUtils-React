@@ -1,6 +1,6 @@
-const reducer = (state = 20, action) => {
+const reducer = (state = 100, action) => {
     if(action.type === 'add'){
-        return 20 - action.payload;
+        return 100 - action.payload;
     }
     else{
         return state;
