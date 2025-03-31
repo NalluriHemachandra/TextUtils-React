@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - master  # Adjust branch as needed
+      
+  workflow_dispatch:
 
 jobs:
   build-and-deploy:
